@@ -3,7 +3,6 @@
 import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { sendContactEmail } from "@/app/actions"
 import { useToast } from "@/hooks/use-toast"
 import { motion } from "framer-motion"
 
@@ -22,38 +21,46 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [id]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const createMailtoLink = (data: typeof formData) => {
+    const params = new URLSearchParams({
+      subject: data.subject,
+      body: `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`,
+    })
+
+    return `mailto:pitafimurad99@gmail.com?${params.toString().replace(/\+/g, "%20")}`
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     try {
-      const result = await sendContactEmail(formData)
-
-      if (result.success) {
-        toast({
-          title: "Message sent!",
-          description: "Thank you for your message. I'll get back to you soon.",
-          variant: "default",
-        })
-
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        })
-      } else {
-        toast({
-          title: "Error",
-          description: result.error || "Something went wrong. Please try again.",
-          variant: "destructive",
-        })
+      if (typeof window === "undefined") {
+        throw new Error("Email link can only be opened in the browser.")
       }
+
+      const mailtoLink = createMailtoLink(formData)
+      window.location.href = mailtoLink
+
+      toast({
+        title: "Email draft ready",
+        description: "Your email client should open with a prefilled message.",
+        variant: "default",
+      })
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again later.",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Failed to open your email client. Please email pitafimurad99@gmail.com directly.",
         variant: "destructive",
       })
     } finally {

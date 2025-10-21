@@ -1,30 +1,34 @@
 # Branden Resume Website V1
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+This repository contains a statically generated Next.js portfolio that can be deployed on [GitHub Pages](https://pages.github.com/).
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/brandenwachtel-7775s-projects/v0-muhammad-murad-portfolio)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/TnYiAxeerfI)
+## Getting Started
 
-## Overview
+```bash
+pnpm install
+pnpm dev
+```
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Building for GitHub Pages
 
-## Deployment
+The project is configured to produce a fully static build via `pnpm run build`, which outputs files to the `out/` directory. Deploy the contents of that folder to the `gh-pages` branch (or your preferred Pages branch).
 
-Your project is live at:
+If your site is published from a subdirectory (for example, `https://<username>.github.io/<repository>`), set the environment variable `NEXT_PUBLIC_BASE_PATH` to the repository name before building:
 
-**[https://vercel.com/brandenwachtel-7775s-projects/v0-muhammad-murad-portfolio](https://vercel.com/brandenwachtel-7775s-projects/v0-muhammad-murad-portfolio)**
+```bash
+NEXT_PUBLIC_BASE_PATH="<repository>" pnpm run build
+```
 
-## Build your app
+After building, preview the static export locally with:
 
-Continue building your app on:
+```bash
+pnpm run preview
+```
 
-**[https://v0.app/chat/projects/TnYiAxeerfI](https://v0.app/chat/projects/TnYiAxeerfI)**
+This starts a static server on [http://localhost:3000](http://localhost:3000).
 
-## How It Works
+This automatically adjusts the base path and asset prefix so that all links and static assets resolve correctly on GitHub Pages.
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Contact Form
+
+Because GitHub Pages does not provide server-side execution, the contact form now opens a pre-populated email in the visitor's default mail client instead of attempting to send email through server actions.
