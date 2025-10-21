@@ -55,7 +55,7 @@ export function LinkedInBanner() {
               <div className="flex-1">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Connect with me on LinkedIn</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
-                  Stay updated on the latest in AI innovations and strategies.
+                  Stay updated on the latest in AI innovations digital transformations, and reach out to discuss!
                 </p>
                 <Button onClick={handleConnect} size="sm" className="w-full">
                   Connect Now
