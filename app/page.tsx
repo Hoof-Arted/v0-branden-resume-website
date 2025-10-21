@@ -423,19 +423,20 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
+
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection direction="right" delay={0.3}>
                 <div className="pt-4">
                   <p className="text-gray-700 dark:text-gray-300">
                     I'm always open to discussing AI transformation initiatives, speaking opportunities, or strategic
                     partnerships. Feel free to reach out!
                   </p>
                 </div>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection direction="right" delay={0.3}>
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+{/*              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
                 <ContactForm />
-              </div>
+              </div> */}
             </AnimatedSection>
           </div>
         </div>
