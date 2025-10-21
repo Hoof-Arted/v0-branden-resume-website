@@ -30,7 +30,6 @@ export function Navbar() {
 
   const navLinks = [
     { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
     { name: "Articles", href: "#articles" },
     { name: "Cookbook", href: "#cookbook" },
     { name: "Contact", href: "#contact" },
@@ -54,7 +53,7 @@ export function Navbar() {
             transition={{ delay: 0.2 }}
           >
             <Link
-              href="/"
+              href="/#"
               className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
             >
               Branden Wachtel
@@ -92,7 +91,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              <Link href="/documents/Branden%20Wachtel%202025%20Resume.pdf" target="_blank" download>
+              <Link href="/documents/Branden-Wachtel-Resume.pdf" target="_blank" download>
                 <Button variant="outline" size="sm" className="relative overflow-hidden group bg-transparent">
                   <span className="relative z-10">Download Resume</span>
                   <span className="absolute inset-0 bg-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
@@ -151,7 +150,7 @@ export function Navbar() {
               ))}
               <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
                 <Link
-                  href="/documents/Branden%20Wachtel%202025%20Resume.pdf"
+                  href="/documents/Branden-Wachtel-Resume.pdf"
                   target="_blank"
                   download
                   className="block px-3 py-2 rounded-md text-base font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
