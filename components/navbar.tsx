@@ -54,7 +54,7 @@ export function Navbar() {
             transition={{ delay: 0.2 }}
           >
             <Link
-              href="/"
+              href="/#"
               className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
             >
               Branden Wachtel

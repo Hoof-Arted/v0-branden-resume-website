@@ -8,6 +8,8 @@ import { SmoothScroll } from "@/components/smooth-scroll"
 import { HeroSection } from "@/components/hero-section"
 import { LinkedInBanner } from "@/components/linkedin-banner"
 import { AnimatedSection, ParticleBackground, AnimatedGradientBackground } from "@/components/client-animations"
+import { linkedInArticleIds } from "@/lib/linkedin-articles"
+import { LinkedInEmbed } from "@/components/linkedin-embed"
 
 export default function Home() {
   return (
@@ -90,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* Articles Section */}
-      <section id="articles" className="py-16 px-4 bg-gray-50 dark:bg-gray-900 relative">
+        <section id="articles" className="py-16 px-4 bg-gray-50 dark:bg-gray-900 relative">
         <div className="container mx-auto max-w-6xl relative z-10">
           <AnimatedSection>
             <h2 className="text-3xl font-bold mb-8 text-center">Articles & Insights</h2>
@@ -99,35 +101,27 @@ export default function Home() {
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <AnimatedSection delay={0.2}>
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                <iframe
-                  src="https://www.linkedin.com/embed/feed/update/urn:li:share:7382151618600837121?collapsed=1"
-                  height="400"
-                  width="100%"
-                  frameBorder="0"
-                  allowFullScreen
-                  title="LinkedIn Post"
-                  className="rounded-lg"
-                ></iframe>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.3}>
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center h-full">
-                <p className="text-gray-600 dark:text-gray-400 text-center mb-4">More articles coming soon!</p>
-                <Button asChild variant="outline">
-                  <Link href="https://linkedin.com/in/brandenwachtel" target="_blank">
-                    <Linkedin className="w-4 h-4 mr-2" />
-                    Follow on LinkedIn
-                  </Link>
-                </Button>
-              </div>
-            </AnimatedSection>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {linkedInArticleIds.map((articleId, index) => (
+              <AnimatedSection key={articleId} delay={0.2 + index * 0.1}>
+                <LinkedInEmbed articleId={articleId} />
+              </AnimatedSection>
+            ))}
           </div>
+
+          <AnimatedSection delay={0.4}>
+            <div className="mt-12 text-center">
+              <Button asChild size="lg" variant="outline">
+                <Link href="https://linkedin.com/in/brandenwachtel" target="_blank">
+                  <Linkedin className="w-4 h-4 mr-2" />
+                View More on LinkedIn
+                </Link>
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
+
 
       {/* Experience Section */}
       <section id="experience" className="py-16 px-4 bg-white dark:bg-gray-800 relative">
