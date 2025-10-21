@@ -10,7 +10,7 @@ export function LinkedInEmbed({ articleId, className = "" }: LinkedInEmbedProps)
     >
       <iframe
         src={`https://www.linkedin.com/embed/feed/update/urn:li:share:${articleId}?collapsed=1`}
-        height="240"
+        height="246"
         width="100%"
         frameBorder="0"
         allowFullScreen=""
