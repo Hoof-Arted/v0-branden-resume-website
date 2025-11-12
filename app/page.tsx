@@ -36,15 +36,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <AnimatedSection direction="left" delay={0.2}>
+              <h3 className="text-xl font-semibold mb-4">Experience</h3>
               <div className="space-y-4">
-                <p className="text-lg text-gray-700 dark:text-gray-300">
-                  I turn AI hype into reality—leveraging leading technologies and business expertise to deliver
-                  competitive advantages at enterprise scale.
-                </p>
                 <p className="text-lg text-gray-700 dark:text-gray-300">
                   Over the past decade at J.P. Morgan, I've architected and delivered enterprise-scale AI and automation
                   programs that empowered 7,000+ citizen developers, eliminated 3M+ hours of manual work annually, and
-                  generated $14M+ in new business value.
+                  generated $14M+ in new revenue.
                 </p>
                 <p className="text-lg text-gray-700 dark:text-gray-300">
                   As a self-taught coder and architect of one of finance's largest citizen development programs, I
@@ -358,6 +355,7 @@ export default function Home() {
       </section>
 
       {/* Cookbook Section */}
+    {/* 
       <section id="cookbook" className="py-16 px-4 bg-white dark:bg-gray-800 relative">
         <div className="container mx-auto max-w-6xl relative z-10">
           <AnimatedSection>
@@ -367,10 +365,10 @@ export default function Home() {
             </p>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.2}>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-12 shadow-lg text-center">
+        <AnimatedSection delay={0.2}>
+          <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-12 shadow-lg text-center">
               <div className="max-w-2xl mx-auto">
-                <div className="w-20 h-20 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center mx-auto mb-6">
                   <ExternalLink className="w-10 h-10 text-purple-600 dark:text-purple-400" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Coming Soon</h3>
@@ -378,20 +376,15 @@ export default function Home() {
                   I'm currently compiling a comprehensive collection of AI implementation guides, best practices, and
                   code examples. Check back soon for practical resources to accelerate your AI transformation journey.
                 </p>
-                <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
-                  <Link href="mailto:branden.wachtel@gmail.com">
-                    <Mail className="w-4 h-4 mr-2" />
-                    Get Notified
-                  </Link>
-                </Button>
               </div>
             </div>
-          </AnimatedSection>
+          </AnimatedSection> 
         </div>
       </section>
+*/}
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 bg-gray-50 dark:bg-gray-900 relative">
+      <section id="contact" className="py-16 px-4 bg-white dark:bg-gray-900 relative">
         <div className="container mx-auto max-w-6xl relative z-10">
           <AnimatedSection>
             <h2 className="text-3xl font-bold mb-8 text-center">Get In Touch</h2>
@@ -400,7 +393,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <AnimatedSection direction="left" delay={0.2}>
               <div className="space-y-6">
-                <h3 className="text-xl font-semibold">Contact Information</h3>
+                
                 <div className="space-y-4">
                   <div className="flex items-center hover:translate-x-1 transition-transform duration-300">
                     <Mail className="w-5 h-5 text-purple-600 mr-3" />
@@ -445,27 +438,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 px-4 bg-gray-800 dark:bg-gray-950 text-white relative">
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <h2 className="text-xl font-bold">Branden Wachtel</h2>
-              <p className="text-gray-400">AI Transformation Leader</p>
-            </div>
-            <div className="flex space-x-4">
-              <Link
-                href="https://linkedin.com/in/brandenwachtel"
-                target="_blank"
-                className="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-300"
-              >
-                <Linkedin className="w-5 h-5" />
-              </Link>
-              <Link
-                href="mailto:branden.wachtel@gmail.com"
-                className="text-gray-400 hover:text-white transition-colors transform hover:scale-110 duration-300"
-              >
-                <Mail className="w-5 h-5" />
-              </Link>
-            </div>
-          </div>
+
           <div className="mt-6 text-center text-gray-400 text-sm">
             <p>© {new Date().getFullYear()} Branden Wachtel. All rights reserved.</p>
           </div>

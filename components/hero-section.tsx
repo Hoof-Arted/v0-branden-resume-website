@@ -26,8 +26,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              Turning AI hype into reality—leveraging leading technologies and business expertise to deliver competitive
-              advantages at enterprise scale.
+              Turning AI hype into reality through the unique combination of technical expertise, business acumen, and financial experience.
             </ClientMotion>
             <ClientMotion
               className="flex flex-wrap gap-4"
