@@ -92,7 +92,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              <Link href="/public/documents/BrandenWachtelResume.pdf" target="_blank" download>
+              <Link href="/documents/BrandenWachtelResume.pdf" target="_blank" download>
                 <Button variant="outline" size="sm" className="relative overflow-hidden group bg-transparent">
                   <span className="relative z-10">Download Resume</span>
                   <span className="absolute inset-0 bg-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
@@ -151,7 +151,7 @@ export function Navbar() {
               ))}
               <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
                 <Link
-                  href="/public/documents/BrandenWachtelResume.pdf"
+                  href="/documents/BrandenWachtelResume.pdf"
                   target="_blank"
                   download
                   className="block px-3 py-2 rounded-md text-base font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
