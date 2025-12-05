@@ -4,14 +4,20 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import "@/app/globals.css"
 
-
 export const metadata: Metadata = {
   title: "Branden Wachtel | AI Transformation Leader",
   description:
     "Portfolio of Branden Wachtel, AI Transformation Leader specializing in enterprise AI strategy, generative AI, and digital transformation at J.P. Morgan",
   generator: "v0.app",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 }
-
 
 export default function RootLayout({
   children,
@@ -21,12 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
           <Toaster />
         </ThemeProvider>
